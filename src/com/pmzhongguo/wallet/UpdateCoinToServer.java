@@ -242,7 +242,6 @@ public class UpdateCoinToServer {
 	
 	public final static void upload() {
 		try {
-			
 			// 上传充值数据
 			List<Map<String, Object>> uploadLst = DBDo.getWaitingCoin();
 			
@@ -291,8 +290,6 @@ public class UpdateCoinToServer {
 		}
 	}
 
-	
-	
 	/**
 	 * 签名验证
 	 * 

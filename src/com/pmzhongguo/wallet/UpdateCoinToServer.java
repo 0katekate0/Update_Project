@@ -32,7 +32,6 @@ import com.pmzhongguo.wallet.helper.MacMD5;
 import com.pmzhongguo.wallet.helper.UpdateETH;
 
 /**
- * @author zhuzhisheng
  * @Description
  * @date on 2016/12/31.
  */
@@ -62,7 +61,6 @@ public class UpdateCoinToServer {
 		UpdateETH.update();
 	}
 
-	
 	public static void update() {
 		btcAddrMap = DBDo.getAllBtcAddr();
         Integer cacheTime = 1000 * 10 * 1;   //1秒 * 60秒 * 30分
@@ -93,7 +91,7 @@ public class UpdateCoinToServer {
         }, 1000, cacheTime);    
 	}
 	
-	// FN
+	// FN钱包
 	public final static void fnProcess() {
 		try {
 			FNRPC fnRpc = new FNRPC(fn_rpcHost, fn_rpcPort);
@@ -102,7 +100,6 @@ public class UpdateCoinToServer {
 			throwable.printStackTrace();
 		}
 	}
-
 
 	/**
 	 * 启动方法C:\Program Files\Bitcoin\daemon，  bitcoind.exe
@@ -142,7 +139,6 @@ public class UpdateCoinToServer {
 		return txCount > 0;
 	}
 
-
 	public final static void ltcProcess() {
 		try {
 			final CryptoCurrencyRPC bitcoinRPC = new CryptoCurrencyRPC(rpcUser, rpcPassword, ltc_rpcHost, ltc_rpcPort);
@@ -169,7 +165,6 @@ public class UpdateCoinToServer {
 			throwable.printStackTrace();
 		}
 	}
-	
 	
 	//https://data.ripple.com/v2/accounts/瑞波地址/transactions?type=Payment&result=tesSUCCESS&limit=100&descending=true
 	public final static void rippleProcess() {
@@ -348,7 +343,7 @@ public class UpdateCoinToServer {
     /**
      * Java将Unix时间戳转换成指定格式日期字符串
      * @param timestampString 时间戳 如："1473048265";
-     * @param formats 要格式化的格式 默认："yyyy-MM-dd HH:mm:ss";
+     * @param format 要格式化的格式 默认："yyyy-MM-dd HH:mm:ss";
      *
      * @return 返回结果 如："2016-09-05 16:06:42";
      */
